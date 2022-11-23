@@ -1,0 +1,9 @@
+#!/bin/bash
+#author: Typeaway14
+#date: 22/11/22
+#Reason: random cowsay art everytime program is run
+
+cowsay -l > jingapinga10201020123456789.txt
+sed -i '1d' jingapinga10201020123456789.txt
+./scripts/readw -a < jingapinga10201020123456789.txt | xargs ./scripts/cwsay
+rm jingapinga10201020123456789.txt

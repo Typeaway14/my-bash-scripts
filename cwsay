@@ -1,0 +1,7 @@
+#!/bin/bash
+#author: Typeaway14
+#date: 22/11/22
+#reason: specifying cowsay art name gives colorful quote in required art
+
+a=$1
+fortune | cowsay -f $a | lolcat

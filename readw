@@ -1,0 +1,30 @@
+#!/bin/bash
+#author: Typeaway14
+#Date: 22/11/22
+#Reason: Return a random word as an output, initially made for random art in cowsay :P
+
+
+array=();
+index=0;
+while read line; 
+do
+	for word in $line;
+	do
+		if [ "$1" == "-a" ] #store the words in array
+		then
+			array[$index]=$word
+			index=$((index+1));
+#			if [ "$*" != "-s" ] #silent the output
+#			then
+#				echo "$word"
+#			fi
+		else
+			echo "$word"
+		fi
+	done
+done
+#echo ${array[4]}
+#if [ "$*" == "-r" ] #return a random variable to stdout
+#then
+echo "${array[(( $RANDOM % $((index-1)) +1 ))]}"
+#fi
